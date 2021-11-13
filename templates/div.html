@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src='static/js/style.js'></script>
+
+
+wheater
+
+                   <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Climate</div>
+                        <div class="card-body">
+                            <h5 class="card-title">City</h5>
+                            <p class="card-text">{{city}}</p>
+                            <h5 class="card-title">Temprature</h5>
+                            <p class="card-text">{{temp}}</p>
+                            <h5 class="card-title">Date</h5>
+                            <p class="card-text">{{date}}</p>
+
+                        </div>
+                    </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                   india
+
+
+
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">India Covid Status</div>
+                        <div class="card-body">
+                            <h5 class="card-title">Active Cases</h5>
+                            <p class="card-text">{{a}}</p>
+                            <h5 class="card-title">Recovered Cases</h5>
+                            <p class="card-text">{{r}}</p>
+                            <h5 class="card-title">Death Cases</h5>
+                            <p class="card-text">{{d}}</p>
+
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+
+                        state search
+                    <div>     
+                        <div>
+                            <form method="post" action='/state/'>
+                            <select name="keyword" id="keyword">
+                            {% for i in states %}
+                                <option name='keyword' value="{{i}}">{{i}}</option>
+                                
+
+                            
+                                {% endfor %}
+                            
+                            
+                            </select>
+                        
+                            <button type='Submit'>Search</button>
+                            </form>
+                        </div>
+                        
+
+                        state
+
+
+                        </div>
+                        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                            <div class="card-header">{{name}} Covid Status</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Active Cases</h5>
+                                <p class="card-text">{{active}}</p>
+                                <h5 class="card-title">Recovered Cases</h5>
+                                <p class="card-text">{{recovered}}</p>
+                                <h5 class="card-title">Death Cases</h5>
+                                <p class="card-text">{{totalInfected}}</p>
+
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>    

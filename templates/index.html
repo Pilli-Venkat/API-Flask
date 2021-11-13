@@ -1,0 +1,249 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+    <html lang="en">
+
+        <head>
+           
+           <title>India Covid Tracker</title>
+           <!-- CSS only -->
+           
+        <style> 
+                th, td {
+                    padding: 15px;
+                    }  
+                #container1{
+                    width:1110px;
+                    height:250px;
+                    
+                    
+                    background-color:LightGray;
+                    padding-top:20px;
+                    padding-left:15px;
+                    padding-right:15px;
+                   
+                }
+                #st-box {
+                    float:left;
+                    max-width: 18rem
+                   
+                    
+                    background-color:white;
+                    border:solid black;
+                }
+                #nd-box {
+                    float:left;
+                    max-width: 18rem
+                    
+                    background-color:white; 
+                    border:solid black;
+                    margin-left:300px;
+                }
+                #rd-box {
+                    float:right;
+                    max-width: 18rem
+                   
+                    background-color:white;
+                    border:solid black;
+                }
+
+    
+        </style>
+      
+
+        </head>
+
+
+
+        <body>
+
+                   
+            
+<br>
+                <div id="container"   > 
+                
+                    <div  class="card text-white bg-dark" >
+
+                   
+                    <center>
+                    <form method="post" action='/state/' >
+                            <select name="keyword" id="keyword">
+                            {% for i in states %}
+                                <option name='keyword' value="{{i}}">{{i}}</option>
+                                
+
+                            
+                                {% endfor %}
+                            
+                            
+                            </select>
+                             
+                        
+                            <button class="btn btn-light" type='Submit'>Search</button>
+                    </form>
+                    </center>
+
+                    
+                    
+                   
+                        
+                        <table>
+                        <tr>
+                                <th>Climate</th>
+                                <th>Indian Covid Status</th>
+
+                                <th>{{name}}... Covid Status</th>
+                            </tr>
+                            <tr>
+                                <td><h5 class="card-title">City</h5><p text-align='center'>{{city}}<p></td>
+                                <td><h5 class="card-title">Active Cases</h5><p text-align='center'>{{a}}<p></td>
+                                <td><h5 class="card-title">Active Cases</h5><p text-align='center'>{{active}}<p></td>
+                            </tr>
+                            <tr>
+                                <td> <h5 class="card-title">Temprature</h5><p text-align='center'>{{temp}}<p></td>
+                                <td><h5 class="card-title">Recovered Cases</h5><p text-align='center'>{{r}}<p></td>
+                                <td><h5 class="card-title">Recovered Cases</h5><p text-align='center'>{{recovered}}<p></td>
+                            </tr>
+                            <tr>
+                                <td><h5 class="card-title">Date</h5><p text-align='center'>{{date}}<p></td>
+                                <td><h5 class="card-title">Death Cases</h5><p text-align='center'>{{d}}<p></td>
+                                <td><h5 class="card-title">Death Cases</h5><p text-align='center'>{{totalInfected}}<p></td>
+                            </tr>
+                        </table>
+                    
+                    </div>
+                    <!--
+  
+                    <div id ="s-box" class="card text-white bg-dark "  >
+                        <div class="card-header">India Covid Status</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Active Cases</h5>
+                                <p class="card-text">{{a}}</p>
+                                <h5 class="card-title">Recovered Cases</h5>
+                                <p class="card-text">{{r}}</p>
+                                <h5 class="card-title">Death Cases</h5>
+                                <p class="card-text">{{d}}</p>
+
+                            </div>
+                        </div>
+                     
+                    </div>
+                    -->
+
+                    <!--
+                    
+
+                    <div id="nd-box">
+                        <div style="max-width: 18rem;">
+                            <form method="post" action='/state/'>
+                            <select name="keyword" id="keyword">
+                            {% for i in states %}
+                                <option name='keyword' value="{{i}}">{{i}}</option>
+                                
+
+                            
+                                {% endfor %}
+                            
+                            
+                            </select>
+                        
+                            <button type='Submit'>Search</button>
+                            </form>
+                        </div>
+
+                        <div class="card text-white bg-dark " >
+                            <div class="card-header">{{name}} Covid Status</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Active Cases</h5>
+                                    <p class="card-text">{{active}}</p>
+                                    <h5 class="card-title">Recovered Cases</h5>
+                                    <p class="card-text">{{recovered}}</p>
+                                    <h5 class="card-title">Death Cases</h5>
+                                    <p class="card-text">{{totalInfected}}</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    -->
+                  
+
+                    <!--
+                  
+                    <div id="rd-box" class="card text-white bg-dark " >
+                        <div class="card-header">Climate</div>
+                            <div class="card-body">
+                                <h5 class="card-title">City</h5>
+                                <p class="card-text">{{city}}</p>
+                                <h5 class="card-title">Temprature</h5>
+                                <p class="card-text">{{temp}}</p>
+                                <h5 class="card-title">Date</h5>
+                                <p class="card-text">{{date}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                   
+                   
+                </div><br>
+            
+
+                <div  class='container' style=' background-color:#343a40;'>
+                        
+
+                        <div class="news_blog">
+
+                                <center>
+
+                                <h1 style ='color:white;'> TOP HEAD LINES </h1>
+
+                                </center>
+                                        
+                                <div class="card-group" >
+                                {% for i in articles[:4] %}
+
+                                <div class="card border border-success">
+                                <img class="card-img-top rounded" src="{{i['urlToImage']}}" height=175px  alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ i['title'] }}</h5> 
+                                    <span><b>Published: </b><i>{{ i['publishedAt'][:10]}}</i></span>
+                                    <p class="card-text">{{ i['description'][:100] }}... </p>
+                                    <a href="{{i['url']}}" class="btn btn-success">Read more</a>
+                                </div>
+                                </div>
+
+                                {% endfor %}
+                                </div>
+
+
+                                <div class="card-group" >
+                                {% for i in articles[4:8] %}
+
+                                <div class="card border border-success">
+
+                                <img class="card-img-top" src="{{i['urlToImage']}}" height=175px  alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ i['title'] }}</h5> 
+                                    <span><b>Published: </b><i>{{ i['publishedAt'][:10]}}</i></span>
+                                    <p class="card-text">{{ i['description'][:100]}}... </p>
+                                    
+                                    <a href="{{i['url']}}" class="btn btn-success">Read more</a>
+                                </div>
+                                </div>
+
+                                {% endfor %}
+                                </div>
+                                
+                                
+                        </div>    
+                    
+                </div>
+            
+
+      
+
+       
+{% endblock %}
